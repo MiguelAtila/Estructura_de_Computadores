@@ -1,0 +1,63 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+// Función para imprimir un caracter formado por segmentos
+void imprimirCaracter(int caracter[7]) {
+    cout << " ";
+    cout << (caracter[0] ? " -- " : "    ") << endl;     // A
+    cout << (caracter[1] ? "|  " : "   ") << (caracter[6] ? " " : "") << (caracter[2] ? " |" : "  ") << endl; // B C
+    cout << (caracter[3] ? " -- " : "    ") << endl;     // D
+    cout << (caracter[4] ? "|  " : "   ") << (caracter[5] ? " " : "") << (caracter[6] ? " |" : "  ") << endl; // E F
+    cout << " ";
+    cout << (caracter[6] ? " -- " : "    ") << endl;     // G
+}
+
+int main() {
+    // Definir los caracteres formados por segmentos para cada número y letra
+    int caracteres[16][7] = {
+        {1, 1, 1, 0, 1, 1, 1}, // 0
+        {0, 0, 1, 0, 0, 0, 1}, // 1
+        {1, 0, 1, 1, 1, 1, 0}, // 2
+        {1, 0, 1, 1, 0, 1, 1}, // 3
+        {0, 1, 1, 1, 0, 0, 1}, // 4
+        {1, 1, 0, 1, 0, 1, 1}, // 5
+        {1, 1, 0, 1, 1, 1, 1}, // 6
+        {1, 0, 1, 0, 0, 0, 1}, // 7
+        {1, 1, 1, 1, 1, 1, 1}, // 8
+        {1, 1, 1, 1, 0, 1, 1}, // 9
+        {1, 1, 1, 0, 1, 1, 1}, // A
+        {0, 1, 1, 1, 1, 1, 1}, // b
+        {1, 1, 0, 1, 1, 0, 0}, // C
+        {0, 0, 1, 1, 1, 1, 0}, // d
+        {1, 1, 0, 1, 1, 1, 1}, // E
+        {1, 1, 0, 0, 1, 1, 1}  // F
+    };
+
+    // Pedir al usuario que ingrese un valor binario de 4 bits
+    string entrada;
+    cout << "Ingrese un valor binario de 4 bits: ";
+    cin >> entrada;
+
+    // Verificar si la entrada es válida
+    if (entrada.length() != 4) {
+        cout << "Error: La entrada debe tener 4 bits." << endl;
+        return 1;
+    }
+
+    // Convertir la entrada a un número entero
+    int valor = stoi(entrada, nullptr, 2);
+
+    // Verificar si el valor está en el rango válido
+    if (valor < 0 || valor > 15) {
+        cout << "Error: El valor debe estar entre 0 y F en hexadecimal." << endl;
+        return 1;
+    }
+
+    // Imprimir el caracter correspondiente formado por segmentos
+    cout << "El caracter formado por segmentos es:" << endl;
+    imprimirCaracter(caracteres[valor]);
+
+    return 0;
+}

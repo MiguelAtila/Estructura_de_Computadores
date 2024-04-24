@@ -1,0 +1,247 @@
+#include <iostream>
+#include <string>
+#include <bitset> // Para la conversión de decimal a binario
+#include <iomanip> // Para la conversión de decimal a hexadecimal
+
+using namespace std;
+
+// Función para imprimir el caracter '0'
+void imprimirCaracter0() {
+    cout << " ";
+    cout << "-- " << endl;    
+    cout << "|  |" << endl;
+    cout << "|  |" << endl;
+    cout << " -- " << endl;    
+}
+
+// Función para imprimir el caracter '1'
+void imprimirCaracter1() {
+    cout << "    " << endl;    
+    cout << "  | " << endl;
+    cout << "  | " << endl;
+    cout << "    " << endl;    
+}
+
+// Función para imprimir el caracter '2'
+void imprimirCaracter2() {
+    cout << " ";
+    cout << "-- " << endl;    
+    cout << "   |" << endl;
+    cout << " -- " << endl;    
+    cout << "|    " << endl;
+    cout << " --" << endl;
+}
+
+// Función para imprimir el caracter '3'
+void imprimirCaracter3() {
+    cout << " ";
+    cout << "-- " << endl;    
+    cout << "   |" << endl;
+    cout << " -- " << endl;    
+    cout << "   |" << endl;  
+    cout << " -- " << endl;
+}
+
+// Función para imprimir el caracter '4'
+void imprimirCaracter4() {
+    cout << "    " << endl;    
+    cout << "|  |" << endl;
+    cout << " -- " << endl;    
+    cout << "   |" << endl;    
+}
+
+// Función para imprimir el caracter '5'
+void imprimirCaracter5() {
+    cout << " ";
+    cout << "-- " << endl;    
+    cout << "|   " << endl;
+    cout << " -- " << endl;    
+    cout << "   |" << endl;
+    cout << " -- " << endl;
+}
+
+// Función para imprimir el caracter '6'
+void imprimirCaracter6() {
+    cout << " ";
+    cout << "-- " << endl;    
+    cout << "|    " << endl;
+    cout << " -- " << endl;    
+    cout << "|  |" << endl;
+    cout << " -- " << endl;
+}
+
+// Función para imprimir el caracter '7'
+void imprimirCaracter7() {
+    cout << " ";
+    cout << "-- " << endl;    
+    cout << "   |" << endl;
+    cout << "   "  << endl;    
+    cout << "   |" << endl;    
+}
+
+// Función para imprimir el caracter '8'
+void imprimirCaracter8() {
+    cout << " ";
+    cout << "-- " << endl;    
+    cout << "|  |" << endl;
+    cout << " -- " << endl;    
+    cout << "|  |" << endl;
+    cout << " -- " << endl;
+}
+
+// Función para imprimir el caracter '9'
+void imprimirCaracter9() {
+    cout << " ";
+    cout << "-- " << endl;    
+    cout << "|  |" << endl;
+    cout << " -- " << endl;    
+    cout << "   |" << endl;  
+    cout << " -- " << endl;
+}
+
+// Función para imprimir el caracter 'A'
+void imprimirCaracterA() {
+    cout << " ";
+    cout << "-- " << endl;    
+    cout << "|  |" << endl;
+    cout << " -- " << endl;    
+    cout << "|  |" << endl;    
+}
+
+// Función para imprimir el caracter 'b'
+void imprimirCaracterb() {
+    cout << "|    " << endl;    
+    cout << " -- " << endl;    
+    cout << "|  |" << endl;    
+    cout << " -- " << endl;    
+}
+
+// Función para imprimir el caracter 'C'
+void imprimirCaracterC() {
+    cout << " ";
+    cout << "-- " << endl;    
+    cout << "|    " << endl;
+    cout << "    " << endl;    
+    cout << "|    " << endl;
+    cout << " -- " << endl;
+}
+
+// Función para imprimir el caracter 'd'
+void imprimirCaracterd() {
+    cout << "   |" << endl;    
+    cout << " -- " << endl;    
+    cout << "|  |" << endl;    
+    cout << " -- " << endl;    
+}
+
+// Función para imprimir el caracter 'E'
+void imprimirCaracterE() {
+    cout << " ";
+    cout << "-- " << endl;    
+    cout << "|    " << endl;
+    cout << " -- " << endl;    
+    cout << "|    " << endl;
+    cout << " -- " << endl;
+}
+
+// Función para imprimir el caracter 'F'
+void imprimirCaracterF() {
+    cout << " ";
+    cout << "-- " << endl;    
+    cout << "|    " << endl;
+    cout << " -- " << endl;    
+    cout << "|   " << endl;    
+}
+
+int main() {
+    char opcion;
+    do {
+        // Pedir al usuario que ingrese un valor en decimal
+        int valorDecimal;
+        cout << "Ingrese un valor en decimal: ";
+        cin >> valorDecimal;
+
+        // Verificar si el valor está en el rango válido
+        if (valorDecimal < 0 || valorDecimal > 15) {
+            cout << "Error: El valor debe estar entre 0 y 15." << endl;
+            return 1;
+        }
+
+        // Preguntar al usuario si desea convertir a binario o hexadecimal
+        cout << "¿Desea convertir el valor a binario (B) o hexadecimal (H)? ";
+        cin >> opcion;
+
+        if (opcion == 'B' || opcion == 'b') {
+            // Convertir el valor a binario y mostrarlo
+            string valorBinario = bitset<4>(valorDecimal).to_string();
+            cout << "El valor en binario es: " << valorBinario << endl;
+        } else if (opcion == 'H' || opcion == 'h') {
+            // Convertir el valor a hexadecimal y mostrarlo
+            cout << "El valor en hexadecimal es: 0x" << hex << uppercase << setw(1) << valorDecimal << endl;
+        } else {
+            cout << "Opción no válida." << endl;
+            return 1;
+        }
+
+        // Imprimir el caracter correspondiente formado por segmentos
+        cout << "El caracter formado por segmentos es:" << endl;
+        switch (valorDecimal) {
+            case 0:
+                imprimirCaracter0();
+                break;
+            case 1:
+                imprimirCaracter1();
+                break;
+            case 2:
+                imprimirCaracter2();
+                break;
+            case 3:
+                imprimirCaracter3();
+                break;
+            case 4:
+                imprimirCaracter4();
+                break;
+            case 5:
+                imprimirCaracter5();
+                break;
+            case 6:
+                imprimirCaracter6();
+                break;
+            case 7:
+                imprimirCaracter7();
+                break;
+            case 8:
+                imprimirCaracter8();
+                break;
+            case 9:
+                imprimirCaracter9();
+                break;
+            case 10:
+                imprimirCaracterA();
+                break;
+            case 11:
+                imprimirCaracterb();
+                break;
+            case 12:
+                imprimirCaracterC();
+                break;
+            case 13:
+                imprimirCaracterd();
+                break;
+            case 14:
+                imprimirCaracterE();
+                break;
+            case 15:
+                imprimirCaracterF();
+                break;
+            default:
+                cout << "Error: Valor no válido." << endl;
+                break;
+        }
+
+        cout << "¿Desea ingresar otro valor? (S/N): ";
+        cin >> opcion;
+    } while (opcion != 'N' && opcion != 'n');
+
+    return 0;
+}
