@@ -111,3 +111,35 @@ tokens lexyer ()
     token.token=eof;
     return token;
 }
+
+char* token2string (t_token t){
+    switch(t){
+        case numero:
+        return "numero ";
+
+        case suma:
+        return "suma ";
+
+        case resta:
+        return "resta ";
+
+        case multi:
+        return "multi";
+
+        case division:
+        return "division";
+
+        case fin_de_linea:
+        return "fin de linea";
+
+        case error_lexico:
+        return "error lexico";
+
+        case eof:
+        return "eof";
+
+        default:
+            return "undefined";
+    }
+}
+
