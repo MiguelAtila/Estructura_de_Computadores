@@ -1,0 +1,11 @@
+# depslib dependency file v1.0
+1721932979 source:/home/atilam89/Documentos/EstructuraComputadorasLocal/Estructura_de_Computadores/04_Parcial/03_analizlex3/lexy.cpp
+	<stdio.h>
+	"lexy.h"
+
+1721932979 /home/atilam89/Documentos/EstructuraComputadorasLocal/Estructura_de_Computadores/04_Parcial/03_analizlex3/lexy.h
+
+1721933034 source:/home/atilam89/Documentos/EstructuraComputadorasLocal/Estructura_de_Computadores/04_Parcial/03_analizlex3/main.cpp
+	<iostream>
+	"lexy.h"
+
