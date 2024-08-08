@@ -32,7 +32,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="lexy.cpp" />
+		<Unit filename="lexy.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="paraley.cpp" />
+		<Unit filename="paraley.h" />
 		<Extensions />
 	</Project>
 </CodeBlocks_project_file>
